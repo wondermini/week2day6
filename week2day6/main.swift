@@ -7,8 +7,6 @@
 
 import Foundation
 
-print("Hello, World!")
-
 // M7.
 func printReverse(lines: Int) {
     var temp = 0
@@ -18,11 +16,11 @@ func printReverse(lines: Int) {
             temp += 1
             tempArr.append(temp)
         }
-        if i % 2 == 0 {
+        if i%2 == 0 {
             tempArr = tempArr.reversed()
         }
         for j in tempArr {
-            if j<10{
+            if j < 10 {
                 print(" ", terminator: "")
             }
             print(j, terminator: " ")
@@ -32,3 +30,21 @@ func printReverse(lines: Int) {
 }
 
 printReverse(lines: 4)
+
+// M9.
+func print3515(lines: Int) -> [String] {
+    var resultArr = [String]()
+    for i in 1...lines {
+        if i%15 == 0 {
+            resultArr.append("👏🏼🙏")
+        } else if i%5 == 0 {
+            resultArr.append("🙏")
+        } else if i%3 == 0 {
+            resultArr.append("👏🏼")
+        }else{
+            resultArr.append(String(i))
+        }
+    }
+    return resultArr
+}
+print(print3515(lines: 15))
